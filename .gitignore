@@ -1,0 +1,19 @@
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Modelos do MediaPipe: baixados pelo GitHub Actions durante o build.
+app/src/main/assets/*.task
+
+# ATENCAO: NAO ignore keystore/debug.keystore.
+# Ele precisa estar versionado para que todos os builds assinem o APK com a
+# mesma chave. Sem isso, cada atualizacao falha com
+# INSTALL_FAILED_UPDATE_INCOMPATIBLE no celular.
+# O padrao de .gitignore do Android ignora *.keystore — por isso o padrao
+# nao foi usado aqui.
