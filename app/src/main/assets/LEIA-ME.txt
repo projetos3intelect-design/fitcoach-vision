@@ -1,0 +1,13 @@
+Esta pasta recebe os modelos de deteccao de pose do MediaPipe:
+
+  pose_landmarker_lite.task   (~5 MB)  — padrao do projeto
+  pose_landmarker_full.task   (~9 MB)  — opcional, selecionavel na tela
+
+Os arquivos NAO ficam no repositorio. Eles sao baixados automaticamente pelo
+GitHub Actions a cada build, no passo "Baixar modelos do MediaPipe".
+
+Se um dia voce compilar pelo Android Studio, baixe os dois arquivos manualmente
+para esta pasta:
+
+  https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/latest/pose_landmarker_lite.task
+  https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/latest/pose_landmarker_full.task

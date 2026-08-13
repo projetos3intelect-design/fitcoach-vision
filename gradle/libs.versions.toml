@@ -1,0 +1,36 @@
+[versions]
+# Combinacao conservadora e amplamente documentada.
+# AGP 8.13.2 evita a incerteza do Kotlin embutido do AGP 9, mantendo o Kotlin
+# e o compilador do Compose fixados explicitamente na MESMA versao — que e o
+# que o Compose exige desde o Kotlin 2.0.
+agp = "8.13.2"
+kotlin = "2.3.21"
+
+composeBom = "2026.06.01"
+activityCompose = "1.13.0"
+camerax = "1.6.1"
+mediapipeVision = "0.10.35"
+
+[libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+
+camera-core = { module = "androidx.camera:camera-core", version.ref = "camerax" }
+camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
+camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
+camera-view = { module = "androidx.camera:camera-view", version.ref = "camerax" }
+
+mediapipe-tasks-vision = { module = "com.google.mediapipe:tasks-vision", version.ref = "mediapipeVision" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# Obrigatorio desde o Kotlin 2.0 sempre que buildFeatures.compose = true.
+# A versao TEM de ser a mesma do Kotlin.
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
